@@ -1343,33 +1343,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1040643676778012, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
   m_PrefabInstance: {fileID: 516198752}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &70712957
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70712954}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!136 &70712959
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1385,7 +1358,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1420,7 +1393,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4457282994381246, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
   m_PrefabInstance: {fileID: 516198752}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &70712966
+--- !u!114 &70712968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1432,6 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6e91d7db5b3eb44a1207de240f0f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 70712963}
 --- !u!1001 &72471776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12187,7 +12161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4457282994381246, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0.304
       objectReference: {fileID: 0}
     - target: {fileID: 4457282994381246, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12231,16 +12205,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1040643676778012, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 70712957}
-    - targetCorrespondingSourceObject: {fileID: 1040643676778012, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 70712959}
     - targetCorrespondingSourceObject: {fileID: 1040643676778012, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       insertIndex: -1
       addedObject: {fileID: 70712963}
     - targetCorrespondingSourceObject: {fileID: 1040643676778012, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 70712966}
+      addedObject: {fileID: 70712968}
   m_SourcePrefab: {fileID: 100100000, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
 --- !u!1001 &519087986
 PrefabInstance:
@@ -12860,7 +12831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d6c67e2a0ddf1a949a4871ed8dfac446, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: MovingPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d6c67e2a0ddf1a949a4871ed8dfac446, type: 3}
       propertyPath: m_LocalScale.x
@@ -21362,7 +21333,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: e7bada0889a759e41965e77f2ec00c35, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &921795422
 PrefabInstance:
@@ -26484,7 +26455,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 65e58031bd8c6bb43a009ae2a2991686, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!1001 &1203223521
 PrefabInstance:
