@@ -5,19 +5,38 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    private Vector3 movePosition;
-    public NavMeshAgent agent;
+    private NavMeshAgent navMeshAgent;
+    private Animator animator;
 
-    // Update is called once per frame
+    void Start()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
-            Ray movePosition = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(movePosition, out var hitInfo))
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
             {
-                agent.SetDestination(hitInfo.point);
+                if (hit.collider.CompareTag("Ground"))
+                {
+                    MoveTo(hit.point);
+                }
             }
         }
+
+        bool isMoving = navMeshAgent.velocity.magnitude > 0.1f;
+
+        animator.SetBool("IsRunning", isMoving);
+    }
+
+    void MoveTo(Vector3 destination)
+    {
+        navMeshAgent.SetDestination(destination);
     }
 }
