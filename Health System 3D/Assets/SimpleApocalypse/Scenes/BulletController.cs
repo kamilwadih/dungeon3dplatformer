@@ -8,23 +8,28 @@ public class BulletController : MonoBehaviour
 
     void Update()
     {
-        // Move the bullet forward
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    // Called when the Collider other enters the trigger.
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the collided object has the "Enemy" tag
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Boss"))
         {
-            // Handle the collision with the enemy (you can add your logic here)
+            Debug.Log("Bullet hit the boss!");
+
+            BossHealth bossHealth = other.gameObject.GetComponent<BossHealth>();
+            if (bossHealth != null)
+            {
+                bossHealth.TakeHit();
+            }
+
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("Enemy"))
+        {
             Debug.Log("Bullet hit an enemy!");
 
-            // Destroy the enemy
             Destroy(other.gameObject);
-
-            // Destroy the bullet
             Destroy(gameObject);
         }
     }
