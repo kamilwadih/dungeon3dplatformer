@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public int requiredHits = 5;
+    public int requiredHits = 10;
     private int currentHits = 0;
 
     public void TakeHit()
