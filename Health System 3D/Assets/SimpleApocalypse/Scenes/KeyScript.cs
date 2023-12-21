@@ -14,10 +14,8 @@ public class KeyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check for right mouse button click
         if (Input.GetMouseButtonDown(1))
         {
-            // Check if the mouse is over the key
             if (IsMouseOverKey())
             {
                 ToggleVisibility();
@@ -42,7 +40,6 @@ public class KeyScript : MonoBehaviour
 
     bool IsMouseOverKey()
     {
-        // Raycast to check if the mouse is over the key
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
