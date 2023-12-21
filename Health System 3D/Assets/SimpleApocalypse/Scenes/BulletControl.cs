@@ -8,7 +8,6 @@ public class BulletControl : MonoBehaviour
 
     void Update()
     {
-        // Move the bullet forward
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
